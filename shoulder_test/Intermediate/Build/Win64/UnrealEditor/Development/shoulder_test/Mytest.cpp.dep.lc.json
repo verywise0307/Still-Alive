@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\yena\\documents\\unreal projects\\shoulder_test\\source\\shoulder_test\\mytest.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\yena\\documents\\unreal projects\\shoulder_test\\intermediate\\build\\win64\\shoulder_testeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\yena\\documents\\unreal projects\\shoulder_test\\intermediate\\build\\win64\\unrealeditor\\development\\shoulder_test\\definitions.shoulder_test.h",
+            "c:\\users\\yena\\documents\\unreal projects\\shoulder_test\\source\\shoulder_test\\mytest.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

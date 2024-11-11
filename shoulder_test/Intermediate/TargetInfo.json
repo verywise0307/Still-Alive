@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "shoulder_test",
+			"Path": "C:\\Users\\yena\\Documents\\Unreal Projects\\shoulder_test\\Source\\shoulder_test.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "shoulder_testEditor",
+			"Path": "C:\\Users\\yena\\Documents\\Unreal Projects\\shoulder_test\\Source\\shoulder_testEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
