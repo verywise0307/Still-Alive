@@ -1,18 +1,16 @@
 "C:\Users\yena\Documents\Unreal Projects\shoulder_test\Source\shoulder_test\shoulder_testGameMode.cpp"
 /I .
-/I "C:\Users\yena\Documents\Unreal Projects\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Inc\shoulder_test\UHT"
-/I "C:\Users\yena\Documents\Unreal Projects\shoulder_test\Source"
-/I Runtime
-/I Runtime\TraceLog\Public
-/I Runtime\Core\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
-/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT
+/I Runtime
 /I ..\Shaders\Shared
 /I Runtime\Engine\Classes
 /I Runtime\Engine\Public
+/I Runtime\TraceLog\Public
+/I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreOnline\UHT
 /I Runtime\CoreOnline\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
+/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\NetCore\UHT
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -271,6 +269,8 @@
 /I Runtime\MovieSceneCapture\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController\UHT
 /I Developer\AnimationDataController\Public
+/I "C:\Users\yena\Documents\Unreal Projects\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Inc\shoulder_test\UHT"
+/I "C:\Users\yena\Documents\Unreal Projects\shoulder_test\Source"
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality\UHT
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\MRMesh\UHT
