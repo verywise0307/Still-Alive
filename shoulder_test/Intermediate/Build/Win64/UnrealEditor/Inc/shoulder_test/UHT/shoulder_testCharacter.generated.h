@@ -9,14 +9,27 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef SHOULDER_TEST_shoulder_testCharacter_generated_h
 #error "shoulder_testCharacter.generated.h already included, missing '#pragma once' in shoulder_testCharacter.h"
 #endif
 #define SHOULDER_TEST_shoulder_testCharacter_generated_h
 
 #define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_SPARSE_DATA
-#define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_RPC_WRAPPERS
-#define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap); \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
+#define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap); \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
 #define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_ACCESSORS
 #define FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_14_INCLASS_NO_PURE_DECLS \
 private: \

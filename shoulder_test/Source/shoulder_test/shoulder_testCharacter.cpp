@@ -9,6 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "pushingbox.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -18,6 +19,9 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 {
 	//횡스크롤 on
 	sidescroll = true;
+
+	//밀기 off
+	canpush = false;
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -67,6 +71,13 @@ void Ashoulder_testCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+
+	//오버랩
+	if (GetCapsuleComponent())
+	{
+		GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &Ashoulder_testCharacter::OnBeginOverlap);
+		GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &Ashoulder_testCharacter::OnEndOverlap);	
+	}
 }
 
 void Ashoulder_testCharacter::Tick(float DeltaTime)
@@ -84,7 +95,7 @@ void Ashoulder_testCharacter::Tick(float DeltaTime)
 		// 고정된 위치로 설정
 		SetActorLocation(CurrentLocation);
 	}
-	
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -149,6 +160,24 @@ void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
+	}
+}
+
+void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (Cast<Apushingbox>(OtherActor))
+	{
+		canpush = true;
+	}
+}
+
+void Ashoulder_testCharacter::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	// Overlap이 끝난 Actor가 pushingbox인지 확인
+	if (OtherActor && Cast<Apushingbox>(OtherActor))
+	{
+		// canpush 값을 false로 설정
+		canpush = false;
 	}
 }
 

@@ -69,5 +69,15 @@ public:
 	//È¾½ºÅ©·Ñ ¼ñ´õºä º¯È¯
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool sidescroll;
+
+	UFUNCTION()
+	void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	//¹Ð±â È°¼ºÈ­ º¯È¯
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool canpush;
 };
 
