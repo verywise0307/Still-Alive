@@ -69,6 +69,24 @@ void Ashoulder_testCharacter::BeginPlay()
 	}
 }
 
+void Ashoulder_testCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// 현재 위치 가져오기
+	if (sidescroll)
+	{
+		FVector CurrentLocation = GetActorLocation();
+
+		// X축 위치를 고정
+		CurrentLocation.X = 900.0f;
+
+		// 고정된 위치로 설정
+		SetActorLocation(CurrentLocation);
+	}
+	
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
