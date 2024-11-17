@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "shoulder_test",
-			"Path": "C:\\Users\\yena\\Desktop\\Still Alive\\shoulder_test\\Source\\shoulder_test.Target.cs",
+			"Path": "D:\\Still-Alive\\shoulder_test\\Source\\shoulder_test.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "shoulder_testEditor",
-			"Path": "C:\\Users\\yena\\Desktop\\Still Alive\\shoulder_test\\Source\\shoulder_testEditor.Target.cs",
+			"Path": "D:\\Still-Alive\\shoulder_test\\Source\\shoulder_testEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

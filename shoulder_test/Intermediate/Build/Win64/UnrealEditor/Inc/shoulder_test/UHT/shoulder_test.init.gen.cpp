@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_test_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD379BB61,
+				0xE494B772,
 				0x854470C6,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_test_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_shoulder_test.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_shoulder_test(Z_Construct_UPackage__Script_shoulder_test, TEXT("/Script/shoulder_test"), Z_Registration_Info_UPackage__Script_shoulder_test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD379BB61, 0x854470C6));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_shoulder_test(Z_Construct_UPackage__Script_shoulder_test, TEXT("/Script/shoulder_test"), Z_Registration_Info_UPackage__Script_shoulder_test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xE494B772, 0x854470C6));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
