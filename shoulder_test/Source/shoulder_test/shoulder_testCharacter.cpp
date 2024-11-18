@@ -150,6 +150,7 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 	}
 }
 
+
 void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
@@ -167,7 +168,7 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 {
 	if (Cast<Apushingbox>(OtherActor))
 	{
-		canpush = true;
+		canpush = true;	
 	}
 }
 

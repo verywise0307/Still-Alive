@@ -33,7 +33,6 @@ class Ashoulder_testCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* MoveAction;
 
-
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
@@ -46,6 +45,7 @@ protected:
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
+
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
@@ -81,5 +81,9 @@ public:
 	//밀기 활성화 변환
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool canpush;
+
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool pushkey;
+
 };
 

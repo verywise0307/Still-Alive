@@ -242,6 +242,11 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_testCharacter() {}
 #endif
 		static void NewProp_canpush_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_canpush;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_pushkey_MetaData[];
+#endif
+		static void NewProp_pushkey_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_pushkey;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -349,6 +354,17 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_testCharacter() {}
 		((Ashoulder_testCharacter*)Obj)->canpush = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_canpush = { "canpush", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(Ashoulder_testCharacter), &Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_canpush_SetBit, METADATA_PARAMS(Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_canpush_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_canpush_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey_MetaData[] = {
+		{ "Category", "variable" },
+		{ "ModuleRelativePath", "shoulder_testCharacter.h" },
+	};
+#endif
+	void Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey_SetBit(void* Obj)
+	{
+		((Ashoulder_testCharacter*)Obj)->pushkey = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey = { "pushkey", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(Ashoulder_testCharacter), &Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey_SetBit, METADATA_PARAMS(Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_Ashoulder_testCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_CameraBoom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_FollowCamera,
@@ -358,6 +374,7 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_testCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_LookAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_sidescroll,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_canpush,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Ashoulder_testCharacter_Statics::NewProp_pushkey,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_Ashoulder_testCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<Ashoulder_testCharacter>::IsAbstract,
@@ -396,9 +413,9 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_testCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_Ashoulder_testCharacter, Ashoulder_testCharacter::StaticClass, TEXT("Ashoulder_testCharacter"), &Z_Registration_Info_UClass_Ashoulder_testCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Ashoulder_testCharacter), 2990595416U) },
+		{ Z_Construct_UClass_Ashoulder_testCharacter, Ashoulder_testCharacter::StaticClass, TEXT("Ashoulder_testCharacter"), &Z_Registration_Info_UClass_Ashoulder_testCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Ashoulder_testCharacter), 303461377U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_4112604362(TEXT("/Script/shoulder_test"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_807048743(TEXT("/Script/shoulder_test"),
 		Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_shoulder_testCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
