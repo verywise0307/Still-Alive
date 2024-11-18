@@ -10,6 +10,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "pushingbox.h"
+#include "ladder.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -22,6 +23,9 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 
 	//밀기 off
 	canpush = false;
+
+	//사다리 오르기 off
+	canclimb = false;
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -42,6 +46,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+	GetCharacterMovement()->GravityScale = 1.5f;  // 중력 활성화
 
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
@@ -107,8 +112,8 @@ void Ashoulder_testCharacter::SetupPlayerInputComponent(class UInputComponent* P
 	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		//Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &Ashoulder_testCharacter::JumpCheck);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &Ashoulder_testCharacter::StopJumpingCheck);
 
 		//Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &Ashoulder_testCharacter::Move);
@@ -124,7 +129,6 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-
 	if (Controller != nullptr)
 	{
 		// find out which way is forward
@@ -150,6 +154,52 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 	}
 }
 
+void Ashoulder_testCharacter::JumpCheck(const FInputActionValue& Value)
+{
+	if (canclimb) //사다리를 오를 수 있을 때
+	{
+		// 비행 모드 활성화
+		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Flying);
+		GetCharacterMovement()->GravityScale = 0.0f;  // 중력 비활성화
+
+		FVector ClimbDirection(0.0f, 0.0f, 1.0f);
+		float ClimbSpeed = 200.0f;
+
+		// 수직 속도를 설정하여 캐릭터가 계속해서 오르도록 유지
+		FVector CurrentVelocity = GetCharacterMovement()->Velocity;
+		CurrentVelocity.Z = ClimbSpeed;  // Z 축만 클라이밍 속도로 설정
+		GetCharacterMovement()->Velocity = CurrentVelocity;  // 수직 속도 유지
+		//GetCharacterMovement()->Launch(FVector(0.0f, 0.0f, ClimbSpeed));  // 물리적으로 이동. 나중에 벽에 붙는? 액션 만들때 좋을 듯
+	}
+	else
+	{
+		Jump();
+	}
+}
+
+void Ashoulder_testCharacter::StopJumpingCheck(const FInputActionValue& Value)
+{
+	if (canclimb) //사다리를 오를 수 있을 때
+	{
+		// 비행 모드 활성화
+		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Flying);
+		GetCharacterMovement()->GravityScale = 0.0f;  // 중력 비활성화
+
+		FVector ClimbDirection(0.0f, 0.0f, 1.0f);
+		float ClimbSpeed = 0.0f;
+
+		// 수직 속도를 설정하여 캐릭터가 계속해서 오르도록 유지
+		FVector CurrentVelocity = GetCharacterMovement()->Velocity;
+		CurrentVelocity.Z = ClimbSpeed;  // Z 축만 클라이밍 속도로 설정
+		GetCharacterMovement()->Velocity = CurrentVelocity;  // 수직 속도 유지
+	}
+	else
+	{
+		//GetCharacterMovement()->GravityScale = 1.3f;  // 중력 활성화
+		StopJumping();
+	}
+}
+
 
 void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 {
@@ -166,9 +216,16 @@ void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 
 void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	//밀기 박스 오버랩
 	if (Cast<Apushingbox>(OtherActor))
 	{
 		canpush = true;	
+	}
+
+	//사다리 오버랩
+	if (Cast<Aladder>(OtherActor))
+	{
+		canclimb = true;
 	}
 }
 
@@ -180,6 +237,15 @@ void Ashoulder_testCharacter::OnEndOverlap(UPrimitiveComponent* OverlappedComp, 
 		// canpush 값을 false로 설정
 		canpush = false;
 	}
+
+	//사다리 오버랩 해제
+	if (OtherActor && Cast<Aladder>(OtherActor))
+	{
+		canclimb = false;
+		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); // 걷기 모드 복구
+		GetCharacterMovement()->GravityScale = 1.5f;  // 중력 활성화
+	}
+
 }
 
 

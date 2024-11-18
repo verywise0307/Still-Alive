@@ -1,4 +1,18 @@
-﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" shoulder_testEditor Win64 Development -Project="C:\Users\yena\Documents\Unreal Projects\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild
+﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" shoulder_testEditor Win64 Development -Project="C:\Users\yena\Desktop\Still Alive\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\yena\AppData\Local\UnrealBuildTool\Log.txt
-  Unable to build while Live Coding is active. Exit the editor and game, or press Ctrl+Alt+F11 if iterating on code in the editor or game
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: ""C:\Program Files\Epic Games\UE_5.1\Engine\Build\BatchFiles\Build.bat" shoulder_testEditor Win64 Development -Project="C:\Users\yena\Documents\Unreal Projects\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild" 명령이 종료되었습니다(코드: 6).
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\yena\Desktop\Still Alive).
+  Building shoulder_testEditor...
+  Using Visual Studio 2022 14.35.32216 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Adaptive Build] Excluded from shoulder_test unity file: ladder.cpp, shoulder_testCharacter.cpp
+  Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
+    Executing up to 6 processes, one per physical core
+    Requested 1.5 GB free memory per action, 5.23 GB available: limiting max parallel actions to 3
+  Building 4 actions with 3 processes...
+  [1/4] Compile shoulder_testCharacter.cpp
+  [2/4] Link UnrealEditor-shoulder_test-0028.lib
+     C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0028.lib 라이브러리 및 C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0028.exp 개체를 생성하고 있습니다.
+  [3/4] Link UnrealEditor-shoulder_test-0028.dll
+     C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0028.suppressed.lib 라이브러리 및 C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0028.suppressed.exp 개체를 생성하고 있습니다.
+  [4/4] WriteMetadata shoulder_testEditor.target
+  Total time in Parallel executor: 3.94 seconds
+  Total execution time: 5.75 seconds

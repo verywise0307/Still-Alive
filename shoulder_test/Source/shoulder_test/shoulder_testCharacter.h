@@ -50,6 +50,12 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	/** Called for jumping input */
+	void JumpCheck(const FInputActionValue& Value);
+
+	/** Called for jumping input */
+	void StopJumpingCheck(const FInputActionValue& Value);
+
 			
 
 protected:
@@ -78,12 +84,16 @@ public:
 	UFUNCTION()
 	void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
-	//밀기 활성화 변환
+	//밀기 활성화
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool canpush;
 
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool pushkey;
+
+	//사다리 액션 활성화
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool canclimb;
 
 };
 
