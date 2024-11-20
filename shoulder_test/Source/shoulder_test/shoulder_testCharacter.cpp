@@ -11,7 +11,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "pushingbox.h"
 #include "ladder.h"
-
+#include "shoulderviewbox.h"
 
 //////////////////////////////////////////////////////////////////////////
 // Ashoulder_testCharacter
@@ -216,6 +216,7 @@ void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 
 void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	
 	//밀기 박스 오버랩
 	if (Cast<Apushingbox>(OtherActor))
 	{

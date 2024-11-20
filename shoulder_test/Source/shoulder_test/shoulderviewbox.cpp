@@ -47,7 +47,7 @@ void Ashoulderviewbox::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActo
 {
 	if (Cast<Ashoulder_testCharacter>(OtherActor))
 	{
-		Cast<Ashoulder_testCharacter>(OtherActor)->sidescroll = false;
+		Cast<Ashoulder_testCharacter>(OtherActor)->sidescroll = !Cast<Ashoulder_testCharacter>(OtherActor)->sidescroll;
 	}
 }
 
