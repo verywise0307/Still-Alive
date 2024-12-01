@@ -14,4 +14,12 @@ class SHOULDER_TEST_API AEnemyBase : public Ashoulder_testCharacter
 {
 	GENERATED_BODY()
 	
+public:
+    AEnemyBase();
+
+protected:
+    virtual void BeginPlay() override;
+
+public:
+    virtual void Tick(float DeltaTime) override;
 };
