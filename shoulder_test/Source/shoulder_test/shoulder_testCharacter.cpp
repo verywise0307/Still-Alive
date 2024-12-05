@@ -26,6 +26,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 
 	//사다리 오르기 off
 	canclimb = false;
+	climbing = false;
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
