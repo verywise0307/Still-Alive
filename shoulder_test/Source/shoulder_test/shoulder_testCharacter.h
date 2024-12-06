@@ -91,6 +91,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool pushkey;
 
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool ispushing;
+
 	//사다리 액션 활성화
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool canclimb;

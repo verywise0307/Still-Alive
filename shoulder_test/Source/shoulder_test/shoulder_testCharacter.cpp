@@ -23,6 +23,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 
 	//밀기 off
 	canpush = false;
+	ispushing = false;
 
 	//사다리 오르기 off
 	canclimb = false;
@@ -225,10 +226,14 @@ void Ashoulder_testCharacter::Look(const FInputActionValue& Value)
 void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	
-	//밀기 박스 오버랩
+	// 밀기 박스 오버랩
 	if (Cast<Apushingbox>(OtherActor))
 	{
-		canpush = true;	
+		// 컴포넌트가 정확히 Boxoverlap인지 확인
+		if (OtherComp && OtherComp->GetName() == "Boxoverlap")
+		{
+			canpush = true;
+		}
 	}
 
 	//사다리 오버랩
@@ -241,10 +246,13 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 void Ashoulder_testCharacter::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	// Overlap이 끝난 Actor가 pushingbox인지 확인
-	if (OtherActor && Cast<Apushingbox>(OtherActor))
+	if (Cast<Apushingbox>(OtherActor))
 	{
 		// canpush 값을 false로 설정
-		canpush = false;
+		if (OtherComp && OtherComp->GetName() == "Boxoverlap")
+		{
+			canpush = false;
+		}	
 	}
 
 	//사다리 오버랩 해제
