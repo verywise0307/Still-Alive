@@ -13,6 +13,7 @@ class Ashoulder_testGameMode : public AGameModeBase
 
 public:
 	Ashoulder_testGameMode();
+
 };
 
 

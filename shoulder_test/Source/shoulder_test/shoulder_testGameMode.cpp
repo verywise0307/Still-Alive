@@ -12,4 +12,5 @@ Ashoulder_testGameMode::Ashoulder_testGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
 }

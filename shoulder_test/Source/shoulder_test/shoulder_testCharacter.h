@@ -95,9 +95,18 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool canclimb;
 
-	//사다리 액션 활성화
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool climbing;
+
+	//무기 액션 활성화
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool fighting;
+
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	int weapon;
+
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool pcattack;
 
 };
 

@@ -28,6 +28,11 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	canclimb = false;
 	climbing = false;
 
+	//전투 모드 off
+	fighting = false;
+	weapon = 1;
+	pcattack = false;
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 		
@@ -142,16 +147,18 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 			FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 			// add movement 
 			AddMovementInput(ForwardDirection, MovementVector.Y);
+			// get right vector 
+			const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+			AddMovementInput(RightDirection, MovementVector.X);
 		}
-		// get forward vector
-		//FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-	
-		// get right vector 
-		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		else
+		{
+			// get right vector 
+			const FVector RightDirection(0.0f, 1.0f, 0.0f);
+			AddMovementInput(RightDirection, MovementVector.X);
+		}
 
-		// add movement 
-		//AddMovementInput(ForwardDirection, MovementVector.Y);
-		AddMovementInput(RightDirection, MovementVector.X);
+		
 	}
 }
 
