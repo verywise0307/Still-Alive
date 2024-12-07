@@ -45,7 +45,7 @@ void Ashoulderviewbox::Tick(float DeltaTime)
 //캐릭터가 닿았을 경우 뷰 전환
 void Ashoulderviewbox::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (Cast<Ashoulder_testCharacter>(OtherActor))
+	if (Cast<Ashoulder_testCharacter>(OtherActor) && OtherComp->GetName() == "CharacterMesh0")
 	{
 		Cast<Ashoulder_testCharacter>(OtherActor)->sidescroll = !Cast<Ashoulder_testCharacter>(OtherActor)->sidescroll;
 	}

@@ -31,7 +31,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 
 	//전투 모드 off
 	fighting = false;
-	weapon = 1;
+	weapon = 0;
 	pcattack = false;
 
 	// Set size for collision capsule
