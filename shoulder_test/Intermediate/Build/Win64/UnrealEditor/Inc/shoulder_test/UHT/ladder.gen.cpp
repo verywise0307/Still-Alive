@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodeladder() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(Aladder);
 	Aladder::~Aladder() {}
-	struct Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics
+	struct Z_CompiledInDeferFile_FID_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_Aladder, Aladder::StaticClass, TEXT("Aladder"), &Z_Registration_Info_UClass_Aladder, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Aladder), 3275358079U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_3897752479(TEXT("/Script/shoulder_test"),
-		Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yena_Desktop_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_3897752479(TEXT("/Script/shoulder_test"),
+		Z_CompiledInDeferFile_FID_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Still_Alive_shoulder_test_Source_shoulder_test_ladder_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
