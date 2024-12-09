@@ -33,6 +33,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	fighting = false;
 	weapon = 0;
 	pcattack = false;
+	swordhit = false;
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);

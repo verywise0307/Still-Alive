@@ -111,5 +111,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool pcattack;
 
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool swordhit;
+
 };
 
