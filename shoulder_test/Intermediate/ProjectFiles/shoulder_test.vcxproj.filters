@@ -57,6 +57,12 @@
     <ClInclude Include="..\..\Source\shoulder_test\ladder.h">
       <Filter>Source\shoulder_test</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\shoulder_test\MainCharacter.cpp">
+      <Filter>Source\shoulder_test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\shoulder_test\MainCharacter.h">
+      <Filter>Source\shoulder_test</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\shoulder_test\Mytest.cpp">
       <Filter>Source\shoulder_test</Filter>
     </ClCompile>

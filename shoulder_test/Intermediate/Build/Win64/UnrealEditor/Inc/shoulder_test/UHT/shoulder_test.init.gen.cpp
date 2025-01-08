@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeshoulder_test_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x3481BA09,
-				0xFD0201AE,
+				0x9B0E3B9D,
+				0x3A9F805E,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_shoulder_test.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_shoulder_test.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_shoulder_test(Z_Construct_UPackage__Script_shoulder_test, TEXT("/Script/shoulder_test"), Z_Registration_Info_UPackage__Script_shoulder_test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3481BA09, 0xFD0201AE));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_shoulder_test(Z_Construct_UPackage__Script_shoulder_test, TEXT("/Script/shoulder_test"), Z_Registration_Info_UPackage__Script_shoulder_test, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x9B0E3B9D, 0x3A9F805E));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
