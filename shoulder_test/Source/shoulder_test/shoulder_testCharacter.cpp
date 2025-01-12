@@ -12,6 +12,7 @@
 #include "pushingbox.h"
 #include "ladder.h"
 #include "shoulderviewbox.h"
+#include "churuwall.h"
 
 //////////////////////////////////////////////////////////////////////////
 // Ashoulder_testCharacter
@@ -241,6 +242,16 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 	if (Cast<Aladder>(OtherActor))
 	{
 		canclimb = true;
+	}
+
+	//츄르벽 오버랩
+	if (Cast<Achuruwall>(OtherActor))
+	{
+		// 컴포넌트가 정확히 playeroverlap인지 확인
+		if (OtherComp && OtherComp->GetName() == "playeroverlap")
+		{
+			canpush = true;
+		}
 	}
 }
 
