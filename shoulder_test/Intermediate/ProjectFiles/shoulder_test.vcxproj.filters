@@ -45,6 +45,12 @@
     <Filter Include="Source\shoulder_test">
       <UniqueIdentifier>{44F43765-378B-3234-8C70-5074A1D0530A}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\shoulder_test\churuswamp.cpp">
+      <Filter>Source\shoulder_test</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\shoulder_test\churuswamp.h">
+      <Filter>Source\shoulder_test</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\shoulder_test\churuwall.cpp">
       <Filter>Source\shoulder_test</Filter>
     </ClCompile>
