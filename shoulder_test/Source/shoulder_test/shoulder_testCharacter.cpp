@@ -12,6 +12,7 @@
 #include "pushingbox.h"
 #include "ladder.h"
 #include "shoulderviewbox.h"
+#include "churuwall.h"
 
 //////////////////////////////////////////////////////////////////////////
 // Ashoulder_testCharacter
@@ -34,6 +35,9 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	weapon = 0;
 	pcattack = false;
 	swordhit = false;
+
+	//웅크리기 off
+	iscrouching = false;
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -241,6 +245,16 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 	if (Cast<Aladder>(OtherActor))
 	{
 		canclimb = true;
+	}
+
+	//츄르벽 오버랩
+	if (Cast<Achuruwall>(OtherActor))
+	{
+		// 컴포넌트가 정확히 playeroverlap인지 확인
+		if (OtherComp && OtherComp->GetName() == "playeroverlap")
+		{
+			canpush = true;
+		}
 	}
 }
 
