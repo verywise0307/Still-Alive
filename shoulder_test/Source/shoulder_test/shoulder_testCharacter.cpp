@@ -39,6 +39,10 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	//웅크리기 off
 	iscrouching = false;
 
+	//매달리기 off
+	canhang = false;
+	hanging = false;
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 		
@@ -160,8 +164,11 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 		else
 		{
 			// get right vector 
-			const FVector RightDirection(0.0f, 1.0f, 0.0f);
-			AddMovementInput(RightDirection, MovementVector.X);
+			if (!hanging)
+			{
+				const FVector RightDirection(0.0f, 1.0f, 0.0f);
+				AddMovementInput(RightDirection, MovementVector.X);
+			}	
 		}
 
 		

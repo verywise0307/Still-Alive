@@ -117,5 +117,12 @@ public:
 	//웅크리기
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool iscrouching;
+
+	//매달리기
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool canhang;
+
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	bool hanging;
 };
 
