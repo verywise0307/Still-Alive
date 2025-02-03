@@ -35,6 +35,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	weapon = 0;
 	pcattack = false;
 	swordhit = false;
+	weapon_count = 0;
 
 	//¿õÅ©¸®±â off
 	iscrouching = false;

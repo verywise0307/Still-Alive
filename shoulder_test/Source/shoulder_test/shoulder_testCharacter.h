@@ -114,6 +114,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool swordhit;
 
+	UPROPERTY(BlueprintReadWrite, Category = "variable")
+	int weapon_count;
+
 	//¿õÅ©¸®±â
 	UPROPERTY(BlueprintReadWrite, Category = "variable")
 	bool iscrouching;
