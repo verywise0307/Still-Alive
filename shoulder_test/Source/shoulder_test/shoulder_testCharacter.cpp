@@ -21,6 +21,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 {
 	//횡스크롤 on
 	sidescroll = true;
+	stage3direaction = 0;
 
 	//밀기 off
 	canpush = false;
@@ -108,16 +109,16 @@ void Ashoulder_testCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	// 현재 위치 가져오기
-	if (sidescroll)
-	{
-		FVector CurrentLocation = GetActorLocation();
+	//if (sidescroll)
+	//{
+	//	FVector CurrentLocation = GetActorLocation();
 
 		// X축 위치를 고정
-		CurrentLocation.X = 900.0f;
+	//	CurrentLocation.X = 900.0f;
 
 		// 고정된 위치로 설정
-		SetActorLocation(CurrentLocation);
-	}
+//		SetActorLocation(CurrentLocation);
+	//}
 
 }
 
@@ -168,8 +169,27 @@ void Ashoulder_testCharacter::Move(const FInputActionValue& Value)
 			// get right vector 
 			if (!hanging)
 			{
-				const FVector RightDirection(0.0f, 1.0f, 0.0f);
-				AddMovementInput(RightDirection, MovementVector.X);
+				if (stage3direaction == 0)
+				{
+					const FVector RightDirection(0.0f, 1.0f, 0.0f);
+					AddMovementInput(RightDirection, MovementVector.X);
+				}
+				else if(stage3direaction == 1)
+				{
+					const FVector RightDirection(-1.0f, 0.0f, 0.0f);
+					AddMovementInput(RightDirection, MovementVector.X);
+				}
+				else if (stage3direaction == 2)
+				{
+					const FVector RightDirection(0.0f, -1.0f, 0.0f);
+					AddMovementInput(RightDirection, MovementVector.X);
+				}
+				else if (stage3direaction == 3)
+				{
+					const FVector RightDirection(1.0f, 0.0f, 0.0f);
+					AddMovementInput(RightDirection, MovementVector.X);
+				}
+				
 			}	
 		}
 
