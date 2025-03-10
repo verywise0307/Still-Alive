@@ -30,6 +30,7 @@ Ashoulder_testCharacter::Ashoulder_testCharacter()
 	//사다리 오르기 off
 	canclimb = false;
 	climbing = false;
+	climbingdown = false;
 
 	//전투 모드 off
 	fighting = false;
@@ -271,10 +272,10 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 	}
 
 	//사다리 오버랩
-	if (Cast<Aladder>(OtherActor))
-	{
-		canclimb = true;
-	}
+	//if (Cast<Aladder>(OtherActor))
+	//{
+	//	canclimb = true;
+	//}
 
 	//츄르벽 오버랩
 	if (Cast<Achuruwall>(OtherActor))
@@ -300,12 +301,12 @@ void Ashoulder_testCharacter::OnEndOverlap(UPrimitiveComponent* OverlappedComp, 
 	}
 
 	//사다리 오버랩 해제
-	if (OtherActor && Cast<Aladder>(OtherActor))
-	{
-		canclimb = false;
-		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); // 걷기 모드 복구
-		GetCharacterMovement()->GravityScale = 1.5f;  // 중력 활성화
-	}
+	//if (OtherActor && Cast<Aladder>(OtherActor))
+	//{
+	//	canclimb = false;
+	//	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); // 걷기 모드 복구
+	//	GetCharacterMovement()->GravityScale = 1.5f;  // 중력 활성화
+	//}
 
 }
 
