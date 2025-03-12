@@ -262,14 +262,14 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 {
 	
 	// 밀기 박스 오버랩
-	if (Cast<Apushingbox>(OtherActor))
-	{
+	//if (Cast<Apushingbox>(OtherActor))
+	//{
 		// 컴포넌트가 정확히 Boxoverlap인지 확인
-		if (OtherComp && OtherComp->GetName() == "Boxoverlap")
-		{
-			canpush = true;
-		}
-	}
+	//	if (OtherComp && OtherComp->GetName() == "Boxoverlap")
+	//	{
+	//		canpush = true;
+	//	}
+	//}
 
 	//사다리 오버랩
 	//if (Cast<Aladder>(OtherActor))
@@ -291,14 +291,14 @@ void Ashoulder_testCharacter::OnBeginOverlap(UPrimitiveComponent* OverlappedComp
 void Ashoulder_testCharacter::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	// Overlap이 끝난 Actor가 pushingbox인지 확인
-	if (Cast<Apushingbox>(OtherActor))
-	{
+	//if (Cast<Apushingbox>(OtherActor))
+	//{
 		// canpush 값을 false로 설정
-		if (OtherComp && OtherComp->GetName() == "Boxoverlap")
-		{
-			canpush = false;
-		}	
-	}
+	//	if (OtherComp && OtherComp->GetName() == "Boxoverlap")
+	//	{
+	//		canpush = false;
+	//	}	
+	//}
 
 	//사다리 오버랩 해제
 	//if (OtherActor && Cast<Aladder>(OtherActor))
