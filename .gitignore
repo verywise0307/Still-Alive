@@ -22,3 +22,7 @@ Saved/Autosaves/
 *.xcworkspace
 *.DS_Store
 Thumbs.db
+Binaries/
+DerivedDataCache/
+Intermediate/
+Build/
