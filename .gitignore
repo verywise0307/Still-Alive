@@ -7,10 +7,10 @@ shoulder_test/Intermediate/ProjectFiles/UE5.vcxproj
 shoulder_test/.vs/shoulder_test/v17/ipch/e216a00154a2fc04.ipch
 shoulder_test/.vs/shoulder_test/v17/ipch/3bd7ef8f97b43de2.ipch
 *.ini
-Saved/
-Saved/Config/
-Saved/Logs/
-Saved/Autosaves/
+shoulder_test/Saved/
+shoulder_test/Saved/Config/
+shoulder_test/Saved/Logs/
+shoulder_test/Saved/Autosaves/
 *.suo
 *.user
 *.userprefs
@@ -22,8 +22,8 @@ Saved/Autosaves/
 *.xcworkspace
 *.DS_Store
 Thumbs.db
-Binaries/
-DerivedDataCache/
-Intermediate/
-Build/
+shoulder_test/Binaries/
+shoulder_test/DerivedDataCache/
+shoulder_test/Intermediate/
+shoulder_test/Build/
 *.ipch
