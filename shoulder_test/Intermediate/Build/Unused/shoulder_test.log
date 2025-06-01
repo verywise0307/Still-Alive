@@ -1,18 +1,44 @@
-﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" shoulder_testEditor Win64 Development -Project="C:\Users\soo\Desktop\Meowment\Still-Alive\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild
-  You must install or update .NET to run this application.
-  
-  App: C:\Program Files\Epic Games\UE_5.1\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll
-  Architecture: x64
-  Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
-  .NET location: C:\Program Files\dotnet\
-  
-  The following frameworks were found:
-    8.0.11 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
-    9.0.0 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
-  
-  Learn more:
-  https://aka.ms/dotnet/app-launch-failed
-  
-  To install missing framework, download:
-  https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=win-x64&os=win10
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: ""C:\Program Files\Epic Games\UE_5.1\Engine\Build\BatchFiles\Build.bat" shoulder_testEditor Win64 Development -Project="C:\Users\soo\Desktop\Meowment\Still-Alive\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild" 명령이 종료되었습니다(코드: -2147450730).
+﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" shoulder_testEditor Win64 Development -Project="C:\Users\yena\Desktop\Still Alive\shoulder_test\shoulder_test.uproject" -WaitMutex -FromMsBuild
+  Log file: C:\Users\yena\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\yena\Desktop\Still Alive).
+  Creating makefile for shoulder_testEditor (.uproject file is newer)
+  Building shoulder_testEditor...
+  Using Visual Studio 2022 14.35.32216 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
+    Executing up to 6 processes, one per physical core
+    Requested 1.5 GB free memory per action, 643.78 MB available: limiting max parallel actions to 1
+  Building 30 actions with 1 process...
+  [1/30] Compile SharedPCH.Engine.ShadowErrors.cpp
+  [2/30] Resource Default.rc2
+  [3/30] Compile shoulder_testCharacter.gen.cpp
+  [4/30] Compile cattower.cpp
+  [5/30] Compile shoulder_testGameMode.cpp
+  [6/30] Compile churuswamp.gen.cpp
+  [7/30] Compile Mytest.cpp
+  [8/30] Compile shoulder_testCharacter.cpp
+  [9/30] Compile cattower.gen.cpp
+  [10/30] Compile rope.cpp
+  [11/30] Compile ladder.cpp
+  [12/30] Compile shoulderviewbox.gen.cpp
+  [13/30] Compile EnemyBase.gen.cpp
+  [14/30] Compile shoulderviewbox.cpp
+  [15/30] Compile rope.gen.cpp
+  [16/30] Compile churuwall.cpp
+  [17/30] Compile pushingbox.gen.cpp
+  [18/30] Compile ladder.gen.cpp
+  [19/30] Compile MainCharacter.cpp
+  [20/30] Compile EnemyBase.cpp
+  [21/30] Compile shoulder_testGameMode.gen.cpp
+  [22/30] Compile churuswamp.cpp
+  [23/30] Compile pushingbox.cpp
+  [24/30] Compile shoulder_test.init.gen.cpp
+  [25/30] Compile MainCharacter.gen.cpp
+  [26/30] Compile churuwall.gen.cpp
+  [27/30] Compile shoulder_test.cpp
+  [28/30] Link UnrealEditor-shoulder_test-0115.dll
+     C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0115.suppressed.lib 라이브러리 및 C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0115.suppressed.exp 개체를 생성하고 있습니다.
+  [29/30] Link UnrealEditor-shoulder_test-0115.lib
+     C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0115.lib 라이브러리 및 C:\Users\yena\Desktop\Still Alive\shoulder_test\Intermediate\Build\Win64\UnrealEditor\Development\shoulder_test\UnrealEditor-shoulder_test-0115.exp 개체를 생성하고 있습니다.
+  [30/30] WriteMetadata shoulder_testEditor.target
+  Total time in Parallel executor: 172.16 seconds
+  Total execution time: 178.44 seconds
