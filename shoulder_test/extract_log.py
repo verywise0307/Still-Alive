@@ -15,20 +15,24 @@ death_counts = []
 stage1death_counts = []
 stage2death_counts = []
 stage3death_counts = []
+stage1playtime = []
+stage2playtime = []
+stage3playtime = []
 
 # 로그 파일 열기
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
     for line in file:
 
-        match = re.search(r'logstart\s*[:：]?\s*(\d{4}-\d{2}-\d{2}-\d{2}:\d{2}:\d{2})', line)
+        match = re.search(r'Logstart\s*[:：]?\s*(\d{4}-\d{1,2}-\d{1,2} \d{2}:\d{2}:\d{2})', line)
         if match:
             time_string = match.group(1)
             log_start.append(time_string)
 
-        match = re.search(r'deathcount\s*:\s*(\d+)', line)
-        if match:
-            count = int(match.group(1))
-            death_counts.append(count)
+        # 죽음 로그
+        #match = re.search(r'deathcount\s*:\s*(\d+)', line)
+        #if match:
+        #    count = int(match.group(1))
+        #    death_counts.append(count)
         
         match = re.search(r'stage1deathcount\s*:\s*(\d+)', line)
         if match:
@@ -45,11 +49,28 @@ with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
             count = int(match.group(1))
             stage3death_counts.append(count)
 
+        # 플레이타임 로그
+        match = re.search(r'stage1playtime\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            stage1playtime.append(count)
+        
+        match = re.search(r'stage2playtime\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            stage2playtime.append(count)
+        
+        match = re.search(r'stage3playtime\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            stage3playtime.append(count)
+
 # 폴더 경로 생성
 output_dir = os.path.join(script_dir, 'exeloutput')
 
 # 엑셀 저장 경로 지정
 excel_path = os.path.join(output_dir, 'DeathCounts.xlsx')
+excel_path2 = os.path.join(output_dir, 'playtime.xlsx')
 
 print("리스트 길이 확인")
 print("log_start 길이:", len(log_start))
@@ -57,11 +78,13 @@ print("death_counts 길이:", len(death_counts))
 print("stage1death_counts 길이:", len(stage1death_counts))
 print("stage2death_counts 길이:", len(stage2death_counts))
 print("stage3death_counts 길이:", len(stage3death_counts))
+print("stage1playtime 길이:", len(stage1playtime))
+print("stage2playtime 길이:", len(stage2playtime))
+print("stage3playtime 길이:", len(stage3playtime))
 
 # pandas DataFrame으로 정리
 df = pd.DataFrame({
     'Log Start': log_start,
-    'Total Death Count': death_counts,
     'Stage1 Death Count': stage1death_counts,
     'Stage2 Death Count': stage2death_counts,
     'Stage3 Death Count': stage3death_counts
@@ -69,4 +92,12 @@ df = pd.DataFrame({
 
 # Excel로 저장
 df.to_excel(excel_path, index=False)
-print(f"총 {len(death_counts)}개의 deathcount 항목이 추출되어 엑셀로 저장됨.")
+
+df = pd.DataFrame({
+    'Log Start': log_start,
+    'Stage1 playtime': stage1playtime,
+    'Stage2 playtime': stage2playtime,
+    'Stage3 playtime': stage3playtime
+})
+
+df.to_excel(excel_path2, index=False)
