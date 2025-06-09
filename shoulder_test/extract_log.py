@@ -20,6 +20,8 @@ attack_counts = []
 push_counts = []
 crouch_counts = []
 signclick_counts = []
+animskip_counts = []
+npcchat_counts = []
 
 stage1death_counts = []
 stage2death_counts = []
@@ -45,6 +47,11 @@ stage3push_counts = []
 stage1crouch_counts = []
 stage2crouch_counts = []
 stage3crouch_counts = []
+signclick1_counts = []
+signclick2_counts = []
+signclick3_counts = []
+npcchat1_counts = []
+npcchat2_counts = []
 
 
 # 로그 파일 열기
@@ -190,10 +197,36 @@ with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
             count = int(match.group(1))
             stage3crouch_counts.append(count)
             
-        match = re.search(r'signclickcount\s*:\s*(\d+)', line)
+        #사인 클릭 횟수 로그    
+        match = re.search(r'signclick1count\s*:\s*(\d+)', line)
         if match:
             count = int(match.group(1))
-            signclick_counts.append(count)
+            signclick1_counts.append(count)
+        
+        match = re.search(r'signclick2count\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            signclick2_counts.append(count)
+            
+        match = re.search(r'signclick3count\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            signclick3_counts.append(count)
+            
+        match = re.search(r'animskipcount\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            animskip_counts.append(count)
+            
+        match = re.search(r'npcchat1\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            npcchat1_counts.append(count)
+            
+        match = re.search(r'npcchat2\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            npcchat2_counts.append(count)
 
 
 
@@ -202,7 +235,8 @@ output_dir = os.path.join(script_dir, 'exeloutput')
 
 # 엑셀 저장 경로 지정
 excel_path = os.path.join(output_dir, 'ActionLog.xlsx')
-excel_path1 = os.path.join(output_dir, 'OtherLog.xlsx')
+excel_path1 = os.path.join(output_dir, 'UILog.xlsx')
+excel_path2 = os.path.join(output_dir, 'OtherLog.xlsx')
 
 print("리스트 길이 확인")
 print("log_start 길이:", len(log_start))
@@ -250,7 +284,10 @@ print("stage1death_counts 길이:", len(stage1death_counts))
 print("stage2death_counts 길이:", len(stage2death_counts))
 print("stage3death_counts 길이:", len(stage3death_counts))
 
-print("signclick_counts 길이:", len(signclick_counts))
+print("signclick1_counts 길이:", len(signclick1_counts))
+print("signclick2_counts 길이:", len(signclick2_counts))
+print("signclick3_counts 길이:", len(signclick3_counts))
+print("animskip_counts 길이:", len(animskip_counts))
 
 # zip_longest 사용해 길이 맞추기
 data = list(zip_longest(
@@ -261,7 +298,6 @@ data = list(zip_longest(
     stage1death_counts,
     stage2death_counts,
     stage3death_counts,
-    signclick_counts,
     fillvalue=None
 ))
 
@@ -273,13 +309,12 @@ df = pd.DataFrame(data, columns=[
     'Stage3 Playtime',
     'Stage1 Death Count',
     'Stage2 Death Count',
-    'Stage3 Death Count',
-    'signclick_counts'
+    'Stage3 Death Count'
 ])
 
 # 엑셀로 저장
-df.to_excel(excel_path1, index=False)
-print("엑셀 저장 완료:", excel_path1)
+df.to_excel(excel_path2, index=False)
+print("엑셀 저장 완료:", excel_path2)
 
 data = list(zip_longest(
     stage1jump_counts,
@@ -328,3 +363,28 @@ df = pd.DataFrame(data, columns=[
 # 엑셀로 저장
 df.to_excel(excel_path, index=False)
 print("엑셀 저장 완료:", excel_path)
+
+# zip_longest 사용해 길이 맞추기
+data = list(zip_longest(
+    signclick1_counts,
+    signclick2_counts,
+    signclick3_counts,
+    animskip_counts,
+    npcchat1_counts,
+    npcchat2_counts,
+    fillvalue=None
+))
+
+# DataFrame 생성
+df = pd.DataFrame(data, columns=[
+    'signclick1_counts',
+    'signclick2_counts',
+    'signclick3_counts',
+    'animskip_counts',
+    'npcchat1_counts',
+    'npcchat2_counts'
+])
+
+# 엑셀로 저장
+df.to_excel(excel_path1, index=False)
+print("엑셀 저장 완료:", excel_path1)
