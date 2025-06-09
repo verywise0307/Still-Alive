@@ -22,6 +22,8 @@ crouch_counts = []
 signclick_counts = []
 animskip_counts = []
 npcchat_counts = []
+happyending_counts = []
+sadending_counts = []
 
 stage1death_counts = []
 stage2death_counts = []
@@ -227,6 +229,16 @@ with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
         if match:
             count = int(match.group(1))
             npcchat2_counts.append(count)
+            
+        match = re.search(r'happyending\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            happyending_counts.append(count)
+            
+        match = re.search(r'sadending\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            sadending_counts.append(count)
 
 
 
@@ -288,6 +300,10 @@ print("signclick1_counts 길이:", len(signclick1_counts))
 print("signclick2_counts 길이:", len(signclick2_counts))
 print("signclick3_counts 길이:", len(signclick3_counts))
 print("animskip_counts 길이:", len(animskip_counts))
+print("npcchat1_counts 길이:", len(npcchat1_counts))
+print("npcchat2_counts 길이:", len(npcchat2_counts))
+print("happyending_counts 길이:", len(happyending_counts))
+print("sadending_counts 길이:", len(sadending_counts))
 
 # zip_longest 사용해 길이 맞추기
 data = list(zip_longest(
@@ -298,6 +314,8 @@ data = list(zip_longest(
     stage1death_counts,
     stage2death_counts,
     stage3death_counts,
+    happyending_counts,
+    sadending_counts,
     fillvalue=None
 ))
 
@@ -309,7 +327,9 @@ df = pd.DataFrame(data, columns=[
     'Stage3 Playtime',
     'Stage1 Death Count',
     'Stage2 Death Count',
-    'Stage3 Death Count'
+    'Stage3 Death Count',
+    'happyending',
+    'sadending'
 ])
 
 # 엑셀로 저장
