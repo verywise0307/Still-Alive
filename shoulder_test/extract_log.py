@@ -19,6 +19,7 @@ hang_counts = []
 attack_counts = []
 push_counts = []
 crouch_counts = []
+signclick_counts = []
 
 stage1death_counts = []
 stage2death_counts = []
@@ -188,6 +189,12 @@ with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
         if match:
             count = int(match.group(1))
             stage3crouch_counts.append(count)
+            
+        match = re.search(r'signclickcount\s*:\s*(\d+)', line)
+        if match:
+            count = int(match.group(1))
+            signclick_counts.append(count)
+
 
 
 # 폴더 경로 생성
@@ -243,6 +250,8 @@ print("stage1death_counts 길이:", len(stage1death_counts))
 print("stage2death_counts 길이:", len(stage2death_counts))
 print("stage3death_counts 길이:", len(stage3death_counts))
 
+print("signclick_counts 길이:", len(signclick_counts))
+
 # zip_longest 사용해 길이 맞추기
 data = list(zip_longest(
     log_start,
@@ -252,6 +261,7 @@ data = list(zip_longest(
     stage1death_counts,
     stage2death_counts,
     stage3death_counts,
+    signclick_counts,
     fillvalue=None
 ))
 
@@ -264,6 +274,7 @@ df = pd.DataFrame(data, columns=[
     'Stage1 Death Count',
     'Stage2 Death Count',
     'Stage3 Death Count',
+    'signclick_counts'
 ])
 
 # 엑셀로 저장
