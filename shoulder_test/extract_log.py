@@ -70,7 +70,13 @@ pattern = re.compile(r'''
     bossfailcount\s*:\s*(?P<bossfailcount>\d+)\s+
     boss1failcount\s*:\s*(?P<boss1failcount>\d+)\s+
     boss2failcount\s*:\s*(?P<boss2failcount>\d+)\s+
-    boss3failcount\s*:\s*(?P<boss3failcount>\d+)
+    boss3failcount\s*:\s*(?P<boss3failcount>\d+)\s+
+    bossanimcount\s*:\s*(?P<bossanimcount>\d+)\s+
+    bossanim1count\s*:\s*(?P<bossanim1count>\d+)\s+
+    bossanim2count\s*:\s*(?P<bossanim2count>\d+)\s+
+    bossanim3count\s*:\s*(?P<bossanim3count>\d+)\s+
+    magiccirclecount\s*:\s*(?P<magiccirclecount>\d+)\s+
+    pausecount\s*:\s*(?P<pausecount>\d+)\s
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
