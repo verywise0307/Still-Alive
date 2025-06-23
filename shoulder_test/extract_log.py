@@ -9,7 +9,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 log_path = os.path.join(script_dir, 'Saved', 'Logs', 'shoulder_test.log')
 output_dir = os.path.join(script_dir, 'exeloutput')
 os.makedirs(output_dir, exist_ok=True)
-excel_path = os.path.join(output_dir, 'ActionLog_AllInOne.xlsx')
+excel_path = os.path.join(output_dir, 'Log_AllInOne.xlsx')
 
 # 모든 결과를 저장할 리스트
 log_data = []
@@ -21,7 +21,7 @@ pattern = re.compile(r'''
     stage1deathcount\s*:\s*(?P<stage1death>\d+)\s+
     stage2deathcount\s*:\s*(?P<stage2death>\d+)\s+
     stage3deathcount\s*:\s*(?P<stage3death>\d+)\s+
-    stage1playtime\s*:\s*(?P<stage1play>\d+\.?\d*)\s+
+    stage1playtime\s*:\s*(?P<stage1play>[-]?\d+\.?\d*)\s+
     stage2playtime\s*:\s*(?P<stage2play>\d+\.?\d*)\s+
     stage3playtime\s*:\s*(?P<stage3play>\d+\.?\d*)\s+
     jumpcount\s*:\s*(?P<jumpcount>\d+)\s+
@@ -36,6 +36,13 @@ pattern = re.compile(r'''
     stage1hangcount\s*:\s*(?P<stage1hang>\d+)\s+
     stage2hangcount\s*:\s*(?P<stage2hang>\d+)\s+
     stage3hangcount\s*:\s*(?P<stage3hang>\d+)\s+
+    attackcount\s*:\s*(?P<attackcount>\d+)\s+
+    stage1smashattackcount\s*:\s*(?P<stage1smashattackcount>\d+)\s+
+    stage1throwingattackcount\s*:\s*(?P<stage1throwingattackcount>\d+)\s*
+    stage1throwingaccuracy\s*:\s*(?P<stage1throwingaccuracy>\d+)\s+
+    stage2attackcount\s*:\s*(?P<stage2attackcount>\d+)\s+
+    stage2throwingaccuracy\s*:\s*(?P<stage2throwingaccuracy>\d+)\s+
+    bossyarnattackaccuracy\s*:\s*(?P<bossyarnattackaccuracy>\d+)\s+
     crouchcount\s*:\s*(?P<crouch>\d+)\s+
     stage1crouchcount\s*:\s*(?P<stage1crouch>\d+)\s+
     stage2crouchcount\s*:\s*(?P<stage2crouch>\d+)\s+
@@ -53,7 +60,23 @@ pattern = re.compile(r'''
     npcchat1\s*:\s*(?P<npc1>\d+)\s+
     npcchat2\s*:\s*(?P<npc2>\d+)\s+
     happyending\s*:\s*(?P<happy>\d+)\s+
-    sadending\s*:\s*(?P<sad>\d+)
+    sadending\s*:\s*(?P<sad>\d+)\s+
+    stage1bosstime\s*:\s*(?P<stage1bosstime>\d+\.?\d*)\s+
+    boss1remaininglives\s*:\s*(?P<boss1lives>\d+)\s+
+    stage2bosstime\s*:\s*(?P<stage2bosstime>\d+\.?\d*)\s+
+    boss2remaininglives\s*:\s*(?P<boss2lives>\d+)\s+
+    stage3bosstime\s*:\s*(?P<stage3bosstime>\d+\.?\d*)\s+
+    boss3remaininglives\s*:\s*(?P<boss3lives>\d+)\s+
+    bossfailcount\s*:\s*(?P<bossfailcount>\d+)\s+
+    boss1failcount\s*:\s*(?P<boss1failcount>\d+)\s+
+    boss2failcount\s*:\s*(?P<boss2failcount>\d+)\s+
+    boss3failcount\s*:\s*(?P<boss3failcount>\d+)\s+
+    bossanimcount\s*:\s*(?P<bossanimcount>\d+)\s+
+    bossanim1count\s*:\s*(?P<bossanim1count>\d+)\s+
+    bossanim2count\s*:\s*(?P<bossanim2count>\d+)\s+
+    bossanim3count\s*:\s*(?P<bossanim3count>\d+)\s+
+    magiccirclecount\s*:\s*(?P<magiccirclecount>\d+)\s+
+    pausecount\s*:\s*(?P<pausecount>\d+)\s
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
