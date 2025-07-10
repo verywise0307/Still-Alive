@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodechuruwall() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(Achuruwall);
 	Achuruwall::~Achuruwall() {}
-	struct Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuwall_h_Statics
+	struct Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuwall_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_Achuruwall, Achuruwall::StaticClass, TEXT("Achuruwall"), &Z_Registration_Info_UClass_Achuruwall, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Achuruwall), 2039564081U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuwall_h_1406997463(TEXT("/Script/shoulder_test"),
-		Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuwall_h_1406997463(TEXT("/Script/shoulder_test"),
+		Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuwall_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

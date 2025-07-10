@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodechuruswamp() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(Achuruswamp);
 	Achuruswamp::~Achuruswamp() {}
-	struct Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuswamp_h_Statics
+	struct Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuswamp_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_Achuruswamp, Achuruswamp::StaticClass, TEXT("Achuruswamp"), &Z_Registration_Info_UClass_Achuruswamp, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Achuruswamp), 4196006978U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuswamp_h_666697650(TEXT("/Script/shoulder_test"),
-		Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_yena_meowment_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuswamp_h_666697650(TEXT("/Script/shoulder_test"),
+		Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_shoulder_test_Source_shoulder_test_churuswamp_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
