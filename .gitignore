@@ -28,3 +28,4 @@ shoulder_test/Intermediate/
 shoulder_test/Build/
 *.ipch
 Windows/shoulder_test/Content/Paks/shoulder_test-Windows.ucas
+/shoulder_test/.vs

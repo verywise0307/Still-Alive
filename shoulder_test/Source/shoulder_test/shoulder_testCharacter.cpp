@@ -120,6 +120,36 @@ void Ashoulder_testCharacter::Tick(float DeltaTime)
 		// 고정된 위치로 설정
 		SetActorLocation(CurrentLocation);
 	}
+	if (sidescroll && stage3direaction == 1)
+	{
+		FVector CurrentLocation = GetActorLocation();
+
+		// X축 위치를 고정
+		CurrentLocation.Y = 41900.0f;
+
+		// 고정된 위치로 설정
+		SetActorLocation(CurrentLocation);
+	}
+	if (sidescroll && stage3direaction == 2)
+	{
+		FVector CurrentLocation = GetActorLocation();
+
+		// X축 위치를 고정
+		CurrentLocation.X = 2100.0f;
+
+		// 고정된 위치로 설정
+		SetActorLocation(CurrentLocation);
+	}
+	if (sidescroll && stage3direaction == 3)
+	{
+		FVector CurrentLocation = GetActorLocation();
+
+		// X축 위치를 고정
+		CurrentLocation.Y = 43100.0f;
+
+		// 고정된 위치로 설정
+		SetActorLocation(CurrentLocation);
+	}
 
 }
 
