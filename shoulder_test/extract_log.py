@@ -77,6 +77,9 @@ pattern = re.compile(r'''
     bossanim1count\s*:\s*(?P<bossanim1count>\d+)\s*
     bossanim2count\s*:\s*(?P<bossanim2count>\d+)\s*
     bossanim3count\s*:\s*(?P<bossanim3count>\d+)\s*
+    stage1bossfirstattacktime\s*:\s*(?P<stage1bossfirstattacktime>\d+\.?\d*)\s*
+    stage2bossfirstattacktime\s*:\s*(?P<stage2bossfirstattacktime>\d+\.?\d*)\s*
+    stage3bossfirstattacktime\s*:\s*(?P<stage3bossfirstattacktime>\d+\.?\d*)\s*
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
