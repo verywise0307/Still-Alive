@@ -6,7 +6,7 @@ print("실행됨 확인")
 
 # 현재 경로 기준 로그 파일 위치
 script_dir = os.path.dirname(os.path.abspath(__file__))
-log_path = os.path.join(script_dir, 'Saved', 'Logs', 'shoulder_test.log')
+log_path = os.path.join(script_dir, 'Logoutput.txt')
 output_dir = os.path.join(script_dir, 'exeloutput')
 os.makedirs(output_dir, exist_ok=True)
 excel_path = os.path.join(output_dir, 'Log_AllInOne.xlsx')
