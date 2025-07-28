@@ -89,10 +89,12 @@ pattern = re.compile(r'''
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
-    for line in file:
-        match = pattern.search(line)
-        if match:
-            log_data.append(match.groupdict())
+    content = file.read()  # 전체 로그를 한 번에 읽음
+    match = pattern.search(content)
+    if match:
+        log_data.append(match.groupdict())
+    else:
+        print("패턴 매칭 실패. 로그 형식이 정규식과 다릅니다.")
 
 # DataFrame으로 변환
 df = pd.DataFrame(log_data)
