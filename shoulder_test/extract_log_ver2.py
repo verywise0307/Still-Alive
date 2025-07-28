@@ -21,9 +21,14 @@ pattern = re.compile(r'''
     stage1deathcount\s*:\s*(?P<stage1death>\d+)\s*
     stage2deathcount\s*:\s*(?P<stage2death>\d+)\s*
     stage3deathcount\s*:\s*(?P<stage3death>\d+)\s*
-    stage1playtime\s*:\s*(?P<stage1play>[-]?\d+\.?\d*)\s*
-    stage2playtime\s*:\s*(?P<stage2play>\d+\.?\d*)\s*
-    stage3playtime\s*:\s*(?P<stage3play>\d+\.?\d*)\s*
+    signcount\s*:\s*(?P<sign>\d+)\s*
+    signclick1count\s*:\s*(?P<sign1>\d+)\s*
+    signclick2count\s*:\s*(?P<sign2>\d+)\s*
+    signclick3count\s*:\s*(?P<sign3>\d+)\s*
+    pausecount\s*:\s*(?P<pausecount>\d+)\s*
+    pausecount1\s*:\s*(?P<pausecount1>\d+)\s*
+    pausecount2\s*:\s*(?P<pausecount2>\d+)\s*
+    pausecount3\s*:\s*(?P<pausecount3>\d+)\s*
     jumpcount\s*:\s*(?P<jumpcount>\d+)\s*
     stage1jumpcount\s*:\s*(?P<stage1jump>\d+)\s*
     stage2jumpcount\s*:\s*(?P<stage2jump>\d+)\s*
@@ -39,10 +44,10 @@ pattern = re.compile(r'''
     attackcount\s*:\s*(?P<attackcount>\d+)\s*
     stage1smashattackcount\s*:\s*(?P<stage1smashattackcount>\d+)\s*
     stage1throwingattackcount\s*:\s*(?P<stage1throwingattackcount>\d+)\s*
-    stage1throwingaccuracy\s*:\s*(?P<stage1throwingaccuracy>\d+(?:\.\d{1,2})?)\s*
+    stage1throwingaccuracy\s*:\s*(?P<stage1throwingaccuracy>\d+\.?\d*)\s*
     stage2attackcount\s*:\s*(?P<stage2attackcount>\d+)\s*
-    stage2throwingaccuracy\s*:\s*(?P<stage2throwingaccuracy>\d+(?:\.\d{1,2})?)\s*
-    bossyarnattackaccuracy\s*:\s*(?P<bossyarnattackaccuracy>\d+(?:\.\d{1,2})?)\s*
+    stage2throwingaccuracy\s*:\s*(?P<stage2throwingaccuracy>\d+\.?\d*)\s*
+    bossyarnattackaccuracy\s*:\s*(?P<bossyarnattackaccuracy>\d+\.?\d*)\s*
     crouchcount\s*:\s*(?P<crouch>\d+)\s*
     stage1crouchcount\s*:\s*(?P<stage1crouch>\d+)\s*
     stage2crouchcount\s*:\s*(?P<stage2crouch>\d+)\s*
@@ -51,35 +56,36 @@ pattern = re.compile(r'''
     stage1pushcount\s*:\s*(?P<stage1push>\d+)\s*
     stage2pushcount\s*:\s*(?P<stage2push>\d+)\s*
     stage3pushcount\s*:\s*(?P<stage3push>\d+)\s*
-    signcount\s*:\s*(?P<sign>\d+)\s*
-    signclick1count\s*:\s*(?P<sign1>\d+)\s*
-    signclick2count\s*:\s*(?P<sign2>\d+)\s*
-    signclick3count\s*:\s*(?P<sign3>\d+)\s*
-    animskipcount\s*:\s*(?P<animskip>\d+)\s*
-    npcchat\s*:\s*(?P<npcchat>\d+)\s*
-    npcchat1\s*:\s*(?P<npc1>\d+)\s*
-    npcchat2\s*:\s*(?P<npc2>\d+)\s*
+    itemcount\s*:\s*(?P<itemcount>\d+)\s*
+    item1\s*:\s*(?P<item1>\d+)\s*
+    item2\s*:\s*(?P<item2>\d+)\s*
+    item3\s*:\s*(?P<item3>\d+)\s*
     happyending\s*:\s*(?P<happy>\d+)\s*
     sadending\s*:\s*(?P<sad>\d+)\s*
-    stage1bosstime\s*:\s*(?P<stage1bosstime>\d+\.?\d*)\s*
     boss1remaininglives\s*:\s*(?P<boss1lives>\d+)\s*
-    stage2bosstime\s*:\s*(?P<stage2bosstime>\d+\.?\d*)\s*
     boss2remaininglives\s*:\s*(?P<boss2lives>\d+)\s*
-    stage3bosstime\s*:\s*(?P<stage3bosstime>\d+\.?\d*)\s*
     boss3remaininglives\s*:\s*(?P<boss3lives>\d+)\s*
     bossfailcount\s*:\s*(?P<bossfailcount>\d+)\s*
     boss1failcount\s*:\s*(?P<boss1failcount>\d+)\s*
     boss2failcount\s*:\s*(?P<boss2failcount>\d+)\s*
     boss3failcount\s*:\s*(?P<boss3failcount>\d+)\s*
-    pausecount\s*:\s*(?P<pausecount>\d+)\s*
-    magiccirclecount\s*:\s*(?P<magiccirclecount>\d+)\s*
-    bossanimcount\s*:\s*(?P<bossanimcount>\d+)\s*
-    bossanim1count\s*:\s*(?P<bossanim1count>\d+)\s*
-    bossanim2count\s*:\s*(?P<bossanim2count>\d+)\s*
-    bossanim3count\s*:\s*(?P<bossanim3count>\d+)\s*
+    stage1bosstime\s*:\s*(?P<stage1bosstime>\d+\.?\d*)\s*
+    stage2bosstime\s*:\s*(?P<stage2bosstime>\d+\.?\d*)\s*
+    stage3bosstime\s*:\s*(?P<stage3bosstime>\d+\.?\d*)\s*
+    playtime\s*:\s*(?P<playtime>\d+\.?\d*)\s*
+    stage1playtime\s*:\s*(?P<stage1play>\d+\.?\d*)\s*
+    stage2playtime\s*:\s*(?P<stage2play>\d+\.?\d*)\s*
+    stage3playtime\s*:\s*(?P<stage3play>\d+\.?\d*)\s*
     stage1bossfirstattacktime\s*:\s*(?P<stage1bossfirstattacktime>\d+\.?\d*)\s*
     stage2bossfirstattacktime\s*:\s*(?P<stage2bossfirstattacktime>\d+\.?\d*)\s*
     stage3bossfirstattacktime\s*:\s*(?P<stage3bossfirstattacktime>\d+\.?\d*)\s*
+    animskipcount\s*:\s*(?P<animskip>\d+)\s*
+    bossanim1skipcount\s*:\s*(?P<bossanim1count>\d+)\s*
+    bossanim2skipcount\s*:\s*(?P<bossanim2count>\d+)\s*
+    bossanim3skipcount\s*:\s*(?P<bossanim3count>\d+)\s*
+    npcchat1\s*:\s*(?P<npc1>\d+)\s*
+    npcchat2\s*:\s*(?P<npc2>\d+)\s*
+    npcchat3\s*:\s*(?P<npc3>\d+)\s*
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
