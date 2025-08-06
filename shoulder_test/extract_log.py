@@ -39,10 +39,10 @@ pattern = re.compile(r'''
     attackcount\s*:\s*(?P<attackcount>\d+)\s*
     stage1smashattackcount\s*:\s*(?P<stage1smashattackcount>\d+)\s*
     stage1throwingattackcount\s*:\s*(?P<stage1throwingattackcount>\d+)\s*
-    stage1throwingaccuracy\s*:\s*(?P<stage1throwingaccuracy>\d+)\s*
+    stage1throwingaccuracy\s*:\s*(?P<stage1throwingaccuracy>\d+(?:\.\d{1,2})?)\s*
     stage2attackcount\s*:\s*(?P<stage2attackcount>\d+)\s*
-    stage2throwingaccuracy\s*:\s*(?P<stage2throwingaccuracy>\d+)\s*
-    bossyarnattackaccuracy\s*:\s*(?P<bossyarnattackaccuracy>\d+)\s*
+    stage2throwingaccuracy\s*:\s*(?P<stage2throwingaccuracy>\d+(?:\.\d{1,2})?)\s*
+    bossyarnattackaccuracy\s*:\s*(?P<bossyarnattackaccuracy>\d+(?:\.\d{1,2})?)\s*
     crouchcount\s*:\s*(?P<crouch>\d+)\s*
     stage1crouchcount\s*:\s*(?P<stage1crouch>\d+)\s*
     stage2crouchcount\s*:\s*(?P<stage2crouch>\d+)\s*
@@ -77,6 +77,11 @@ pattern = re.compile(r'''
     bossanim1count\s*:\s*(?P<bossanim1count>\d+)\s*
     bossanim2count\s*:\s*(?P<bossanim2count>\d+)\s*
     bossanim3count\s*:\s*(?P<bossanim3count>\d+)\s*
+    stage1bossfirstattacktime\s*:\s*(?P<stage1bossfirstattacktime>\d+\.?\d*)\s*
+    stage2bossfirstattacktime\s*:\s*(?P<stage2bossfirstattacktime>\d+\.?\d*)\s*
+    stage3bossfirstattacktime\s*:\s*(?P<stage3bossfirstattacktime>\d+\.?\d*)\s*
+    
+   
 ''', re.VERBOSE)
 
 with open(log_path, 'r', encoding='utf-8', errors='ignore') as file:
