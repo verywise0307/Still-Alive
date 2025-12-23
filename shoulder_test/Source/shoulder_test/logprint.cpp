@@ -17,7 +17,7 @@ void Ulogprint::Shutdown()
 	FStrProperty* StrProp = FindFProperty<FStrProperty>(GIClass, LogVarName);
 
 	
-	
+	/*
 	if (StrProp)
 	{
 		FString LogText = StrProp->GetPropertyValue_InContainer(RawGI);
@@ -34,6 +34,6 @@ void Ulogprint::Shutdown()
 			&IFileManager::Get(),
 			FILEWRITE_Append
 		);
-	}
+	}*/
 	
 }
