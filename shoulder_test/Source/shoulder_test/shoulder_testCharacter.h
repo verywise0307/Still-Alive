@@ -50,12 +50,11 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
-	/** Called for jumping input */
+	/*Called for jumping input*/
 	void JumpCheck(const FInputActionValue& Value);
 
-	/** Called for jumping input */
 	void StopJumpingCheck(const FInputActionValue& Value);
-
+	
 			
 
 protected:
